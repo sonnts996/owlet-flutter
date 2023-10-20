@@ -3,4 +3,5 @@
  Copyright (c) 2023 . All rights reserved.
 */
 export 'light_dark_customize.dart';
+export 'scheme_palette.dart';
 export 'theme_mode_getter.dart';

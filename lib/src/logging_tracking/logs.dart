@@ -3,10 +3,10 @@
  Copyright (c) 2023 . All rights reserved.
 */
 
-
-
 import 'dart:async';
 import 'dart:developer' as developer;
+
+import 'package:flutter/foundation.dart';
 
 /// Flint uses [OBLog] to log into the logger.
 mixin OBLog {
@@ -35,7 +35,9 @@ class _OBLogFactory {
       logger.error(
           error: error, stackTrace: stackTrace, name: name, message: message);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -43,13 +45,15 @@ class _OBLogFactory {
     try {
       logger.log(message, name: name);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 }
 
 /// Default [OBLog] will be written to the developer.log
-/// In default, the optional field [name] is replaced by [logName] if it is null
+/// In default, the optional field name is replaced by [logName] if it is null
 class DefaultLog implements OBLog {
   /// Default of log's name
   final String logName = 'OBLog';
