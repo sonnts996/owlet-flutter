@@ -30,7 +30,7 @@ class LightDartCustomize<T> {
   ///
   /// Cause both the [light] and [dark] values can not have null values at the same time, then the returned value is always non-null.
   ///
-  /// Please use [LightDartCustomizeMixin] if you want to customize it.
+  /// Please use [LightDarkObject] if you want to customize it.
   @nonVirtual
   T get dark => (_dark ?? _light)!;
 
@@ -38,7 +38,7 @@ class LightDartCustomize<T> {
   ///
   /// Cause both the [light] and [dark] values can not have null values at the same time, then the returned value is always non-null.
   ///
-  /// Please override [LightDartCustomizeMixin] if you want to customize it.
+  /// Please override [LightDarkObject] if you want to customize it.
   @nonVirtual
   T get light => (_light ?? _dark)!;
 
